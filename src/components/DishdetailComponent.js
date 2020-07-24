@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { Button, Modal, ModalHeader, ModalBody, Row, Col, Label } from 'reactstrap';
 
-import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Control,LocalForm, Form, Errors, actions } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 
 const required = (val) => val && val.length;
