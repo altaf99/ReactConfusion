@@ -122,8 +122,8 @@ const minLength = (len) => (val) => val && (val.length >= len);
                                 </Row>
                                 <Row className="form-group">
                                     <Col md={12}>
-                                        <Label htmlFor="yourname">Your Name</Label>
-                                        <Control.text model=".yourname" id="yourname" name="yourname"
+                                        <Label htmlFor="author">Your Name</Label>
+                                        <Control.text model=".author" id="author" name="author"
                                             placeholder="Your Name"
                                             className="form-control"
                                             validators={{
@@ -132,7 +132,7 @@ const minLength = (len) => (val) => val && (val.length >= len);
                                              />
                                         <Errors
                                             className="text-danger"
-                                            model=".yourname"
+                                            model=".author"
                                             show="touched"
                                             messages={{
                                                 required: 'Required',
@@ -145,8 +145,8 @@ const minLength = (len) => (val) => val && (val.length >= len);
     
                                 <Row className="form-group">
                                     <Col md={12}>
-                                        <Label htmlFor="message">Comment</Label>
-                                        <Control.textarea model=".message" id="message" name="message"
+                                        <Label htmlFor="comment">Comment</Label>
+                                        <Control.textarea model=".comment" id="comment" name="comment"
                                             rows="6"
                                             className="form-control" />
                                     </Col>

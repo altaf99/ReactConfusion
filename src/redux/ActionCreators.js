@@ -183,3 +183,39 @@ export const addLeaders = (leaders) => ({
   type: ActionTypes.ADD_LEADERS,
   payload: leaders
 });
+
+export const postFeedback = (Feedback) => (dispatch) => {
+
+  // const newFeedback = {
+  //     dishId: dishId,
+  //     rating: rating,
+  //     author: author,
+  //     comment: comment
+  // };
+
+  
+  return fetch(baseUrl + 'feedback', {
+      method: "POST",
+      body: JSON.stringify(Feedback),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "same-origin"
+  })
+  .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+    error => {
+          throw error;
+    })
+  .then(response => response.json())
+  .then(response => dispatch(addLeaders(response)))
+  .catch(error =>  { console.log('post feedback', error.message); alert('Your feedback could not be submited\nError: '+error.message); });
+
+};
